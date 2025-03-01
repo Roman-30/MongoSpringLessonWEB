@@ -2,7 +2,7 @@ package ru.vsu.cs.demo3.controller.api;
 
 import ru.vsu.cs.demo3.dto.UserDto;
 import ru.vsu.cs.demo3.dto.UserSaveDto;
-import ru.vsu.cs.demo3.exceprion.UserNotFoundException;
+import ru.vsu.cs.demo3.exception.UserNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

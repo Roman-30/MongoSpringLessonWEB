@@ -1,4 +1,4 @@
-package ru.vsu.cs.demo3.exceprion;
+package ru.vsu.cs.demo3.exception;
 
 public class UserNotFoundException extends Exception{
 

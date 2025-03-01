@@ -2,7 +2,7 @@ package ru.vsu.cs.demo3.service;
 
 import ru.vsu.cs.demo3.dto.UserDto;
 import ru.vsu.cs.demo3.dto.UserSaveDto;
-import ru.vsu.cs.demo3.exceprion.UserNotFoundException;
+import ru.vsu.cs.demo3.exception.UserNotFoundException;
 import ru.vsu.cs.demo3.model.User;
 import ru.vsu.cs.demo3.mupper.inter.UserMapper;
 import ru.vsu.cs.demo3.repository.UserRepository;
