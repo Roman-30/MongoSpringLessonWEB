@@ -1,0 +1,44 @@
+version: '3.5'
+
+services:
+  base-spring:
+    build: .
+    container_name: base-spring
+    ports:
+      - "8080:8080"
+    networks:
+      - mongo-network
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mongo-network
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 12345678
+      MONGO_INITDB_DATABASE: test_mongo
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - mongo-network
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 12345678
+      ME_CONFIG_MONGODB_URL: mongodb://root:12345678@mongo:27017/
+      ME_CONFIG_BASICAUTH: false
+
+volumes:
+  mongo-data:
+
+networks:
+  mongo-network:
+    driver: bridge
+

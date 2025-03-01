@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: demo3
+  data:
+    mongodb:
+      #      host: localhost
+      #      port: 27017
+      #      database: test_mongo
+      #      username: root
+      #      password: 12345678
+      #      uri: mongodb://localhost:27017/test_mongo
+      uri: mongodb://root:12345678@localhost:27017/admin
+      database: admin
+  jpa:
+    show-sql: true
+  servlet:
+    multipart:
+      max-request-size: 20MB
+
+logging:
+  charset:
+    console: UTF-8
+  level:
+    root: INFO
+    igc: TRACE
