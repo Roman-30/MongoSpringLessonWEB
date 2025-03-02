@@ -1,7 +1,7 @@
 package ru.vsu.cs.demo3.service;
 
 import ru.vsu.cs.demo3.dto.UserDto;
-import ru.vsu.cs.demo3.dto.UserSaveDto;
+import ru.vsu.cs.demo3.dto.UserCreateDto;
 import ru.vsu.cs.demo3.exception.UserNotFoundException;
 import ru.vsu.cs.demo3.model.User;
 import ru.vsu.cs.demo3.mupper.inter.UserMapper;
@@ -18,11 +18,11 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
-    public UserDto saveUser(UserSaveDto userSaveDto) {
+    public UserDto saveUser(UserCreateDto userCreateDto) {
         // Валидация, если надо
 
         /*var можно если имя длинное*/
-        User user = userMapper.updateToModel(userSaveDto);
+        User user = userMapper.updateToModel(userCreateDto);
 
         User savedUser = userRepository.save(user);
 

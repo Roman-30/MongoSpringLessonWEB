@@ -1,7 +1,7 @@
 package ru.vsu.cs.demo3.mupper;
 
 import ru.vsu.cs.demo3.dto.UserDto;
-import ru.vsu.cs.demo3.dto.UserSaveDto;
+import ru.vsu.cs.demo3.dto.UserCreateDto;
 import ru.vsu.cs.demo3.model.User;
 import ru.vsu.cs.demo3.mupper.inter.UserMapper;
 import org.springframework.stereotype.Component;
@@ -43,17 +43,17 @@ public class UserMapperImpl implements UserMapper {
     }
 
     @Override
-    public User updateToModel(UserSaveDto userSaveDto) {
-        if (userSaveDto == null) {
+    public User updateToModel(UserCreateDto userCreateDto) {
+        if (userCreateDto == null) {
             return new User();
         }
 
         User user = new User();
 
-        user.setId(userSaveDto.getId());
-        user.setName(userSaveDto.getName());
-        user.setSecondName(userSaveDto.getSecondName());
-        user.setAge(userSaveDto.getAge());
+        user.setId(userCreateDto.getId());
+        user.setName(userCreateDto.getName());
+        user.setSecondName(userCreateDto.getSecondName());
+        user.setAge(userCreateDto.getAge());
 
         return user;
     }

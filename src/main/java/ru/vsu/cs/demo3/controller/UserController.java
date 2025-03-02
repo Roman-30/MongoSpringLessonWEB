@@ -2,7 +2,7 @@ package ru.vsu.cs.demo3.controller;
 
 import ru.vsu.cs.demo3.controller.api.UserApi;
 import ru.vsu.cs.demo3.dto.UserDto;
-import ru.vsu.cs.demo3.dto.UserSaveDto;
+import ru.vsu.cs.demo3.dto.UserCreateDto;
 import ru.vsu.cs.demo3.exception.UserNotFoundException;
 import ru.vsu.cs.demo3.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -19,8 +19,8 @@ public class UserController implements UserApi {
 
     @Override
     @PostMapping
-    public UserDto saveUser(@RequestBody UserSaveDto userSaveDto) {
-        return userService.saveUser(userSaveDto);
+    public UserDto saveUser(@RequestBody UserCreateDto userCreateDto) {
+        return userService.saveUser(userCreateDto);
     }
 
     @Override
