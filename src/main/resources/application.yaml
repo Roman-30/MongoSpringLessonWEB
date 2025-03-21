@@ -3,14 +3,9 @@ spring:
     name: demo3
   data:
     mongodb:
-      #      host: localhost
-      #      port: 27017
-      #      database: test_mongo
-      #      username: root
-      #      password: 12345678
-      #      uri: mongodb://localhost:27017/test_mongo
       uri: mongodb://root:12345678@localhost:27017/admin
-      database: admin
+#        uri: ${SPRING_DATA_MONGODB_URI:mongodb://root:12345678@localhost:27017/admin}
+
   jpa:
     show-sql: true
   servlet:
